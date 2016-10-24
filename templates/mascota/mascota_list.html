@@ -14,6 +14,8 @@
 			<td>Edad</td>
 			<td>Fecha de Rescate</td>
 			<td>Adoptante</td>
+			<!-- Agregar Acciones a nuestros registros editar eliminar-->
+			<td>Acciones</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -26,6 +28,13 @@
 			<td>{{mascota.edad_aproximada}}</td>
 			<td>{{mascota.fecha_rescate}}</td>
 			<td>{{mascota.persona.nombre}} {{mascota.persona.apellidos}}</td>
+			<!-- Agregar Acciones a nuestros registros editar eliminar-->
+			<td>
+				<a class="btn btn-primary" href="{% url 'mascota:mascota_edit' mascota.id %}">Editar</a>
+			</td>
+			<td>
+				<a class="btn btn-danger" href="{% url 'mascota:mascota_delete' mascota.id %}">Eliminar</a>
+			</td>
 		</tr>
 		{% endfor %}
 		{% else %}
