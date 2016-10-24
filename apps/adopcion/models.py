@@ -12,8 +12,20 @@ class Persona(models.Model):
 	email=models.EmailField()
 	domicilio=models.TextField()
 
+	def __unicode__(self):#python 2.7
+		return '{} {}'.format(self.nombre, self.apellidos)
+
+	def __str__(self):#python 3.0 >
+		return '{}'.format(self.nombre)
+
 class Vacuna(models.Model):
 	nombre=models.CharField(max_length=50)
+
+	def __unicode__(self):#python 2.7
+		return '{}'.format(self.nombre)
+
+	def __str__(self):#python 3.0 >
+		return '{}'.format(self.nombre)
 
 class Mascota(models.Model):
 	#folio=models.CharField(primary_key=True,max_length=10)
