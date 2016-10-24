@@ -37,7 +37,7 @@
 				<a class="btn btn-primary" href="{% url 'mascota:person_edit' persona.id %}">Editar</a>
 			</td>
 			<td>
-				<a class="btn btn-danger" href="{% url 'mascota:person_edit' persona.id %}">Eliminar</a>
+				<a class="btn btn-danger" href="{% url 'mascota:person_delete' persona.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}

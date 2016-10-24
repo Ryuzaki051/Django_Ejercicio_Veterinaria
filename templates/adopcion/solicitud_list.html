@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block headerblock %}
+<h1>Lista de Personas</h1>
+{% endblock %}
+
+{% block articleblock1 %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>No. Solicitud</td>
+			<td>Adoptante</td>
+			<td>No. Mascotas</td>
+			<td>Razones</td>
+			<!-- Agregar Acciones a nuestros registros editar eliminar-->
+			<td>Acciones</td>
+		</tr>
+	</thead>
+	<tbody>
+	<!-- Ya no lo considera como diccionario si no como objeto-->
+	{% if object_list %} 
+
+	{% for solicitud in object_list %}
+		<tr>
+			<td>{{solicitud.id}}</td>
+			<td>{{solicitud.persona.nombre}} {{solicitud.persona.apellidos}}</td>
+			<td>{{solicitud.numero_mascotas}}</td>
+			<td>{{solicitud.razones}}</td>
+			<!-- Agregar Acciones a nuestros registros editar eliminar-->
+			<td>
+				<a class="btn btn-primary" href="#">Editar</a>
+			</td>
+			<td>
+				<a class="btn btn-danger" href="#">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h3>¡No hay registros de Adopciones!</h3>
+	{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}

@@ -35,3 +35,8 @@ class Mascota(models.Model):
 	fecha_rescate=models.DateField()
 	persona=models.ForeignKey(Persona, null=True, blank=True, on_delete=models.CASCADE)
 	vacuna=models.ManyToManyField(Vacuna, blank=True)
+
+class Solicitud(models.Model):
+	persona=models.ForeignKey(Persona, null=True, blank=True)
+	numero_mascotas=models.IntegerField()
+	razones=models.TextField()

@@ -1,6 +1,6 @@
 from django import forms
 #from apps.adopcion.models import Mascota
-from models import Mascota, Persona
+from models import Mascota, Persona, Solicitud
 
 class MascotaForm(forms.ModelForm):
 
@@ -60,4 +60,22 @@ class PersonaForm(forms.ModelForm):
 			'telefono': forms.TextInput(attrs={'class':'form-control'}),
 			'email': forms.TextInput(attrs={'class':'form-control'}),
 			'domicilio': forms.TextInput(attrs={'class':'form-control'}),
+		}
+
+class SolicitudForm(forms.ModelForm):
+	class Meta:
+		model=Solicitud
+		fields=[
+			'numero_mascotas',
+			'razones',
+		]
+
+		labels={
+			'numero_mascotas':'Numero de Mascotas',
+			'razones':'Razones para Adoptar',
+		}
+
+		widgets={
+			'numero_mascotas':forms.TextInput(attrs={'class':'form-control'}),
+			'razones':forms.Textarea(attrs={'class':'form-control'})
 		}
