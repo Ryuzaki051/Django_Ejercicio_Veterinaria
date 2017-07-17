@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+
+{% block headerblock %}
+<form method="POST">
+	{% csrf_token %}
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<label for="">Nombre:</label>
+				<input type="text" class="form-control" name="first_name">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<label for="">Apellidos: </label>
+				<input type="text" class="form-control" name="last_name">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<label for="">Nombre de usuario:</label>
+				<input type="text" class="form-control" name="username">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<label for="">Correo: </label>
+				<input type="text" class="form-control" name="email">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<label for="">Contraseña: </label>
+				<input class="form-control" type="password" name="password1">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<label for="">Confirmar contraseña: </label>
+				<input class="form-control" type="password" name="password2">
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md8 col-md-offset-2">
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">Guardar</button>
+			</div>
+		</div>
+	</div>
+
+	
+</form>
+{% endblock %}

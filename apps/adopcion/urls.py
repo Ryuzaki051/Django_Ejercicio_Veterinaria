@@ -22,5 +22,4 @@ urlpatterns = [
     url(r'^solicitud/nuevo$', SolicitudCreate.as_view(), name="register_create"),
     url(r'^solicitud/editar/(?P<pk>\d+)/$', SolicitudUpdate.as_view(), name="register_edit"),
     url(r'^solicitud/eliminar/(?P<pk>\d+)/$', SolicitudDelete.as_view(), name="register_delete"),
-
 ]

@@ -1,4 +1,5 @@
 import os
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.adopcion',
+    'apps.usuario',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -113,6 +115,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS=( 
-    os.path.join(BASE_DIR,"static","base"),
-)
+STATICFILES_DIRS=(os.path.join(BASE_DIR,"static","base"), )
+
+LOGIN_REDIRECT_URL = reverse_lazy('mascota:register_list')

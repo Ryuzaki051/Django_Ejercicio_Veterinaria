@@ -87,6 +87,7 @@ class PersonaDelete(DeleteView):
 	template_name='persona/persona_delete.html'
 	success_url=reverse_lazy('mascota:person_list')
 
+#////////////////////////////////////////////////////////
 class SolicitudList(ListView):
 	model=Solicitud
 	template_name='adopcion/solicitud_list.html'
